@@ -16,11 +16,15 @@ import javax.swing.*;
  * - Initialize & process user input on the buttons created in-class to send to the Game class for further processing and use.
  * - Reset the GUI to facilitate a new, fresh UI game board.
  */
-
+//is a jframe
 public class TicTacToeGUI extends JFrame {
+	//has buttons
     private JButton[][] buttons;
+    //has a game
     private Game game;
+    //has a status
     private JLabel statusLabel;
+    //has a label showing current player
     private JLabel currentPlayerLabel;
 
     public TicTacToeGUI(Game game) {
@@ -47,7 +51,6 @@ public class TicTacToeGUI extends JFrame {
         // the GUI is now ready to be shown to the user
         setVisible(true);
     }
-
     // initial property setting for status label
     private void initializeStatusLabel() {
         statusLabel = new JLabel("Welcome to Tic Tac Toe!");
@@ -61,6 +64,7 @@ public class TicTacToeGUI extends JFrame {
         currentPlayerLabel.setFont(new Font("Arial", Font.PLAIN, 14));
         currentPlayerLabel.setHorizontalAlignment(SwingConstants.CENTER);
     }
+    
 
     // initial property setting & input setup for 3x3 button grid
     private void initializeButtons() {

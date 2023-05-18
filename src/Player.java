@@ -10,12 +10,10 @@
  * - Contains method to retrieve mark symbol by Player object
  * - Contains method to increment wins and losses
  */
-
 public class Player {
-    private int wins; // Player HAS-A wins
+	private int wins; // Player HAS-A wins
     private int losses; // Player HAS-A losses
     private char mark; // Player HAS-A mark
-
     public Player(char plrMark) {
     	mark = plrMark;
         wins = 0;
