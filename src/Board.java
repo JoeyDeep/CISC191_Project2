@@ -11,9 +11,9 @@
  * - Analyze the board matrix to determine if the player's input does not overwrite an existing move
  * - Analyze the board matrix to determine a win condition
  */
+
 public class Board {
-	//has a matrix
-    private char[][] matrix;
+    private char[][] matrix; // Board HAS-A matrix
 
     public Board() {
     	// create a new 3x3 matrix to represent the board
@@ -21,7 +21,7 @@ public class Board {
         // initialize the matrix to contain all values of '-' (empty value)
         clear();
     }
-    ///
+
     public void clear() {
     	// loop through each element of the matrix and clear any marks placed during gameplay
         for (int i = 0; i < 3; i++) {

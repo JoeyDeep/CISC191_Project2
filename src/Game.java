@@ -17,16 +17,13 @@ import java.util.LinkedList;
  */
 
 public class Game {
-	//game has moves, this is a counter
-    private int moves;
-    //game has a current player
-    private Player currentPlayer;
+    private int moves; // Game HAS-A moves, this is a counter
+    private Player currentPlayer; // Game HAS-A current player
     private Player playerX; // Game HAS-MANY Player(s)
     private Player playerO; // Game HAS-MANY Player(s)
     private Board board; // Game HAS-A Board
     private TicTacToeGUI gui; // Game HAS-A GUI
-    //game has a turn sequence
-    private LinkedList<Player> turnSequence = new LinkedList<Player>();
+    private LinkedList<Player> turnSequence = new LinkedList<Player>(); // Game HAS-A turn sequence
 
     // initialize the game by creating player objects, setting the default player, initiating the board gui, and turnSequence
     public Game() {
@@ -45,16 +42,16 @@ public class Game {
         currentPlayer = playerX;
         board.clear();
         gui.resetBoard();
+        // clear last game's turnSequence, and add playerO as the next in sequence (since player X always starts)
         turnSequence.clear();
         turnSequence.addLast(playerO);
     }
     
     // using LinkedList here to swap players each turn
     // game is initiated with turnSequence containing one element: playerO
-    
     public void switchPlayerTurn() {
     	// each switch, currentPlayer is set to the first element in turnSequence
-    	currentPlayer = turnSequence.getFirst();
+    	currentPlayer = turnSequence.getFirst(); 
     	// added to the end of the list is the opposite player, then to clean up removes the first element
     	turnSequence.addLast((currentPlayer == playerX) ? playerO : playerX);
     	turnSequence.removeFirst();
